@@ -1,4 +1,4 @@
-from rest_frammework import serializers
+from rest_framework import serializers
 from mmsapi.models import TopListItem
 
 class TopListItemSerializer(serializers.ModelSerializer):
