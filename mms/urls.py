@@ -14,8 +14,32 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from rest_framework import routers
+from mmsapi.views import *
+from django.conf import settings
+from django.conf.urls.static import static
+
+router = routers.DefaultRouter(trailing_slash=False)
+router.register(r'episodecomments', EpisodeCommentViewSet, 'episodecomment')
+router.register(r'episodes', EpisodeViewSet, 'episode')
+router.register(r'hostrecommendations', HostRecommendationViewSet, 'hostrecommendation')
+router.register(r'media', MediaViewSet, 'media')
+router.register(r'rankings', RankingViewSet, 'ranking')
+router.register(r'recommendations', RecommendationViewSet, 'recommendation')
+router.register(r'recommendationvotes', RecommendationVoteViewSet, 'recommendationvote')
+router.register(r'reviewcomments', ReviewCommentViewSet, 'reviewcomment')
+router.register(r'reviews', ReviewsViewSet, 'review')
+router.register(r'toplists', ToplistViewSet, 'toplist')
+router.register(r'toplistcomments', TopListCommentViewSet, 'toplistcomment')
+router.register(r'toplistitems', TopListItemViewSet, 'toplistitems')
+router.register(r'towatch', ToWatchViewSet, 'towatch')
+router.register(r'watched', WatchedViewSet, 'watched')
+
+
+
 
 urlpatterns = [
+    path('', include(router.urls)),
     path('admin/', admin.site.urls),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

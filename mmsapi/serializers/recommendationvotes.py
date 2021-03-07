@@ -1,7 +1,7 @@
-from rest_frammework import serializers
+from rest_framework import serializers
 from mmsapi.models import RecommendationVote
 
-class RecomendationVoteSerializer(serializers.ModelSerializer):
+class RecommendationVoteSerializer(serializers.ModelSerializer):
     class Meta:
         model = RecommendationVote
         fields = ('recommendation_id', 'user_id')
