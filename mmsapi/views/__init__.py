@@ -1,3 +1,4 @@
+from .auth import register_user, login_user
 from .episodecomments import EpisodeCommentViewSet
 from .episodes import EpisodeViewSet
 from .hostrecommendations import HostRecommendationViewSet
