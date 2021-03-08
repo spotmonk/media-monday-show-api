@@ -5,4 +5,5 @@ class Episode(models.Model):
     blurb = models.TextField()
     host_comments = models.TextField()
     start_date = models.DateField()
-    url = models.TextField()
+    url = models.TextField(unique=True)
+    episode_type = models.CharField(max_length=50, null=True)
