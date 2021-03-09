@@ -47,7 +47,6 @@ class EpisodeViewSet(viewsets.ModelViewSet):
                 episode_type = episodetype,
                 url = splitlink[5]
                 )
-                print(episode.__dict__)
             except IntegrityError as e:
                     pass
             i = i - 1

@@ -16,6 +16,7 @@ requests = "*"
 bs4 = "*"
 lxml = "*"
 python-dateutil = "*"
+tmdbv3api = "*"
 
 [requires]
 python_version = "3.8"
