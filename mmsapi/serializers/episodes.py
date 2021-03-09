@@ -4,4 +4,4 @@ from mmsapi.models import Episode
 class EpisodeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Episode
-        fields = ('title', 'blurb', 'host_comments', 'start_date', 'url', 'episode_type')
+        fields = ('id', 'title', 'blurb', 'host_comments', 'start_date', 'url', 'episode_type')
