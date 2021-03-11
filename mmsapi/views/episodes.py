@@ -9,7 +9,8 @@ from django.db import IntegrityError
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework import status
-
+from rest_framework.decorators import authentication_classes, permission_classes, api_view
+from rest_framework.permissions import AllowAny
 class EpisodeViewSet(viewsets.ModelViewSet):
     queryset = Episode.objects.all()
     serializer_class = EpisodeSerializer
@@ -65,8 +66,9 @@ class EpisodeViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(queryset, many=True)
         return Response(serializer.data)
     
-    @action(methods=['get'], detail=False)
+    @action(methods=['get'], detail=False, permission_classes=[])
     def latest(self, request):
+       
         episode = Episode.objects.latest('id')
         serializer = EpisodeSerializer(episode, context={'request': request})
         return Response(serializer.data, status=status.HTTP_200_OK)
