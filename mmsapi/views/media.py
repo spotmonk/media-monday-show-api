@@ -159,7 +159,7 @@ class MediaViewSet(viewsets.ModelViewSet):
     def latest(self, request):
         episode = Episode.objects.latest('id')
         daterange = timedelta(days=14)
-        media = Media.objects.all()
+        media = Media.objects.all().order_by('release_date')
         mediawindow = media.filter(release_date__range=(episode.start_date, episode.start_date + daterange))
         if not mediawindow:
              self.discoverMedia(episode.start_date, episode.start_date + daterange)

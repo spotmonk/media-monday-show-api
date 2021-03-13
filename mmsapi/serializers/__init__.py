@@ -13,3 +13,4 @@ from .towatch import ToWatchSerializer
 from .watcheds import WatchedSerializer
 from .rankings import RankingSerializer
 from .toplistitems import TopListItemSerializer
+from .images import ImageSerializer
