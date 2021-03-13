@@ -35,6 +35,7 @@ router.register(r'toplistcomments', TopListCommentViewSet, 'toplistcomment')
 router.register(r'toplistitems', TopListItemViewSet, 'toplistitems')
 router.register(r'towatch', ToWatchViewSet, 'towatch')
 router.register(r'watched', WatchedViewSet, 'watched')
+router.register(r'images', ImageViewSet, 'image')
 
 
 
