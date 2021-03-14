@@ -14,3 +14,4 @@ from .toplistitems import TopListItemViewSet
 from .towatch import ToWatchViewSet
 from .watched import WatchedViewSet
 from .image import ImageViewSet
+from .users import UserViewSet

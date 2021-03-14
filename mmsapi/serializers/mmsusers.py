@@ -8,6 +8,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ('id', 'username', 'first_name', 'last_name', 'email')
 
 class MMSUserSerializer(serializers.ModelSerializer):
+    user_id = UserSerializer(read_only=True)
     class Meta:
         model = MMSUser
-        fields = ('id', 'bio', 'profile_image_url', 'created_on', 'active', 'user_id')
+        fields = ('id', 'bio', 'profile_image_url', 'user_id')

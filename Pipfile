@@ -17,6 +17,7 @@ bs4 = "*"
 lxml = "*"
 python-dateutil = "*"
 tmdbv3api = "*"
+django-filter = "*"
 
 [requires]
 python_version = "3.8"
