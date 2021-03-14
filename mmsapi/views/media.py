@@ -147,9 +147,9 @@ class MediaViewSet(viewsets.ModelViewSet):
         daterange = timedelta(days=days)
         start_date = self.request.query_params.get('start_date', datetime.now())
         if not isinstance(start_date, datetime):
-            start_date = datetime.strptime(start_date, '%m-%d-%Y')
+            start_date = datetime.strptime(start_date, '%Y-%m-%d')
         self.discoverMedia(start_date, start_date + daterange)
-        media = Media.objects.all()
+        media = Media.objects.all().order_by('release_date')
         mediawindow = media.filter(release_date__range=(start_date, start_date + daterange))
         serializer = MediaSerializer(mediawindow, context={'request': request}, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
