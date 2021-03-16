@@ -6,4 +6,4 @@ class ToWatchSerializer(serializers.ModelSerializer):
     class Meta:
         model = ToWatch
         media_id = MediaSerializer(read_only=True)
-        fields = ('media_id', 'user_id', 'date')
+        fields = ('id', 'media_id', 'user_id')

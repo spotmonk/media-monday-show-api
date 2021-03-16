@@ -140,12 +140,14 @@ class MediaViewSet(viewsets.ModelViewSet):
             return searchqueryset
 
         elif name:
+            print(name)
             searchterm_list = name.split(' ')
             searchqueryset = Media.objects.all()
             for term in searchterm_list:
                 searchqueryset = searchqueryset.filter(title__contains=term)
             return searchqueryset
         else:
+            queryset = Media.objects.none()
             return self.queryset
     
 

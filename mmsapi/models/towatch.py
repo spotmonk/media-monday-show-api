@@ -10,4 +10,4 @@ class ToWatch(models.Model):
         on_delete=CASCADE,
         related_name="towatchusers",
         related_query_name="towatchuser")
-    date_added = models.DateField()
+    date_added = models.DateField(auto_now_add=True)
