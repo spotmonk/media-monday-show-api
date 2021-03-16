@@ -133,10 +133,18 @@ class MediaViewSet(viewsets.ModelViewSet):
         if name and more:
             #search api for name
             self.query_api(name=name)
-            return self.queryset.filter(title__contains=name)
+            searchterm_list = name.split(' ')
+            searchqueryset = Media.objects.all()
+            for term in searchterm_list:
+                searchqueryset = searchqueryset.filter(title__contains=term)
+            return searchqueryset
 
         elif name:
-            return self.queryset.filter(title__contains=name)
+            searchterm_list = name.split(' ')
+            searchqueryset = Media.objects.all()
+            for term in searchterm_list:
+                searchqueryset = searchqueryset.filter(title__contains=term)
+            return searchqueryset
         else:
             return self.queryset
     
