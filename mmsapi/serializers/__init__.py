@@ -9,7 +9,7 @@ from .reviewcomments import ReviewCommentSerializer
 from .reviews import ReviewSerializer, ReviewPostSerializer
 from .toplist import ToplistSerializer
 from .toplistcomments import TopListCommentSerializer
-from .towatch import ToWatchSerializer
+from .towatch import ToWatchSerializer, ToWatchPostSerializer
 from .watcheds import WatchedSerializer
 from .rankings import RankingSerializer
 from .toplistitems import TopListItemSerializer

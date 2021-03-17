@@ -10,6 +10,6 @@ class Watched(models.Model):
         on_delete=CASCADE,
         related_name="watchedusers",
         related_query_name="watcheduser")
-    date_watched = models.DateField()
-    rating = models.IntegerField()
-    prating = models.IntegerField()
+    date_watched = models.DateField(auto_now_add=True)
+    rating = models.IntegerField(null=True)
+    prating = models.IntegerField(null=True)
