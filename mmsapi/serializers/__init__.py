@@ -6,7 +6,7 @@ from .mmsusers import MMSUserSerializer
 from .recommendations import RecommendationSerializer
 from .recommendationvotes import RecommendationVoteSerializer
 from .reviewcomments import ReviewCommentSerializer
-from .reviews import ReviewSerializer
+from .reviews import ReviewSerializer, ReviewPostSerializer
 from .toplist import ToplistSerializer
 from .toplistcomments import TopListCommentSerializer
 from .towatch import ToWatchSerializer
