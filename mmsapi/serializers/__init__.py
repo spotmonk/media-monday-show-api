@@ -10,7 +10,7 @@ from .reviews import ReviewSerializer, ReviewPostSerializer
 from .toplist import ToplistSerializer
 from .toplistcomments import TopListCommentSerializer
 from .towatch import ToWatchSerializer, ToWatchPostSerializer
-from .watcheds import WatchedSerializer
+from .watcheds import WatchedSerializer, WatchedPostSerializer
 from .rankings import RankingSerializer
 from .toplistitems import TopListItemSerializer
 from .images import ImageSerializer

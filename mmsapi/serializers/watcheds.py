@@ -10,7 +10,7 @@ class WatchedSerializer(serializers.ModelSerializer):
         fields = ('id', 'media_id', 'user_id', 'date_watched', 'rating', 'prating')
 
 
-class ToWatchPostSerializer(serializers.ModelSerializer):
+class WatchedPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Watched
         
