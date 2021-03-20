@@ -2,7 +2,7 @@ from django.db import models
 from django.db.models.deletion import CASCADE
 
 class Ranking(models.Model):
-    ranking = models.IntegerField()
+    ranking = models.IntegerField(null=True)
     media_id =  models.ForeignKey("Media",
         on_delete=CASCADE,
         related_name="mediarankings",

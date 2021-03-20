@@ -37,6 +37,7 @@ router.register(r'towatch', ToWatchViewSet, 'towatch')
 router.register(r'watched', WatchedViewSet, 'watched')
 router.register(r'images', ImageViewSet, 'image')
 router.register(r'users', UserViewSet, 'user')
+router.register(r'unranked', UnrankedViewSet, 'unranked')
 
 
 
