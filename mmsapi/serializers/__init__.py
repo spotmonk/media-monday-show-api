@@ -11,6 +11,6 @@ from .toplist import ToplistSerializer
 from .toplistcomments import TopListCommentSerializer
 from .towatch import ToWatchSerializer, ToWatchPostSerializer
 from .watcheds import WatchedSerializer, WatchedPostSerializer
-from .rankings import RankingSerializer
+from .rankings import RankingSerializer, RankingReadSerializer
 from .toplistitems import TopListItemSerializer
 from .images import ImageSerializer

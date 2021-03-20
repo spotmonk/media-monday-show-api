@@ -3,7 +3,7 @@ from .episodecomments import EpisodeCommentViewSet
 from .episodes import EpisodeViewSet
 from .hostrecommendations import HostRecommendationViewSet
 from .media import MediaViewSet
-from .ranking import RankingViewSet
+from .ranking import RankingViewSet, UnrankedViewSet
 from .recommendations import RecommendationViewSet
 from .recommendationvotes import RecommendationVoteViewSet
 from .reviewcomments import ReviewCommentViewSet
