@@ -68,7 +68,10 @@ class EpisodeViewSet(viewsets.ModelViewSet):
     
     @action(methods=['get'], detail=False, permission_classes=[])
     def latest(self, request):
-       
+        try: 
+            episode = Episode.objects.latest('id')
+        except Episode.DoesNotExist:
+            self.parse_episodes()
         episode = Episode.objects.latest('id')
         serializer = EpisodeSerializer(episode, context={'request': request})
         return Response(serializer.data, status=status.HTTP_200_OK)
