@@ -5,3 +5,5 @@ from mmsapi.serializers import TopListItemSerializer
 class TopListItemViewSet(viewsets.ModelViewSet):
     queryset = TopListItem.objects.all()
     serializer_class = TopListItemSerializer
+
+    
