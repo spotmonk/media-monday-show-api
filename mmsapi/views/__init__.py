@@ -9,7 +9,7 @@ from .recommendationvotes import RecommendationVoteViewSet
 from .reviewcomments import ReviewCommentViewSet
 from .reviews import ReviewsViewSet
 from .toplist import ToplistViewSet
-from .toplistcommenets import TopListCommentViewSet
+from .toplistcomments import TopListCommentViewSet
 from .toplistitems import TopListItemViewSet
 from .towatch import ToWatchViewSet
 from .watched import WatchedViewSet

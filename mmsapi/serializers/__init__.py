@@ -8,7 +8,7 @@ from .recommendationvotes import RecommendationVoteSerializer
 from .reviewcomments import ReviewCommentSerializer, ReviewCommentPostSerializer
 from .reviews import ReviewSerializer, ReviewPostSerializer
 from .toplist import ToplistSerializer
-from .toplistcomments import TopListCommentSerializer
+from .toplistcomments import TopListCommentSerializer, TopListCommentPostSerializer
 from .towatch import ToWatchSerializer, ToWatchPostSerializer
 from .watcheds import WatchedSerializer, WatchedPostSerializer
 from .rankings import RankingSerializer, RankingReadSerializer
