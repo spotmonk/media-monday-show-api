@@ -9,6 +9,14 @@ class ToplistViewSet(viewsets.ModelViewSet):
     queryset = Toplist.objects.all()
     serializer_class = ToplistSerializer
 
+    def get_queryset(self):
+        user_id = self.request.query_params.get('user_id', None)
+        if user_id:
+            self.queryset = Toplist.objects.filter(user_id=user_id)
+            return self.queryset
+        else:
+            return self.queryset
+
     @action(detail=False)
     def new(self, request):
         title = request.query_params.get('title')

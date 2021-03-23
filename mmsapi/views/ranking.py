@@ -47,8 +47,10 @@ class RankingViewSet(viewsets.ModelViewSet):
     def increase(self, request):
         id = request.query_params.get('id')
         instance = Ranking.objects.get(pk=id)
+        mmsuser = MMSUser.objects.get(user_id=request.auth.user)
         all_rankings = Ranking.objects.all()
-        higher = all_rankings.get(ranking=instance.ranking - 1)
+        rankings = all_rankings.filter(user_id=mmsuser)
+        higher = rankings.get(ranking=instance.ranking - 1)
         instance.ranking = instance.ranking - 1
         instance.save()
         higher.ranking = higher.ranking + 1
@@ -60,8 +62,10 @@ class RankingViewSet(viewsets.ModelViewSet):
     def decrease(self, request):
         id = request.query_params.get('id')
         instance = Ranking.objects.get(pk=id)
+        mmsuser = MMSUser.objects.get(user_id=request.auth.user)
         all_rankings = Ranking.objects.all()
-        higher = all_rankings.get(ranking=instance.ranking + 1)
+        rankings = all_rankings.filter(user_id=mmsuser)
+        higher = rankings.get(ranking=instance.ranking + 1)
         instance.ranking = instance.ranking + 1
         instance.save()
         higher.ranking = higher.ranking - 1
